@@ -25,6 +25,7 @@ class Director:
         is_playing (boolean): For the user to decide if the game continues or not.
     '''
 
+
     def __init__(self):
         '''Constructs a new Director.
         
