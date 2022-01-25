@@ -1,6 +1,17 @@
 from game.card import Card
 
 
+# just adding some colors to the code for a 
+# guide if the user hits it or not
+black = ("\033[2;30;40m")
+red = ("\033[2;31;40m")
+green = ("\033[2;32;40m")
+yellow = ("\033[2;33;40m")
+blue = ("\033[2;34;40m")
+purple = ("\033[1;35;40m")
+cyan = ("\033[1;36;40m")
+white = ("\033[0;37;40m")
+
 class Director:
     '''Someone who controls the game. 
     
@@ -59,15 +70,25 @@ class Director:
         '''
         card = Card()
         self.next_card = card.deal_card()
+        keep_going = None
+        status_round = None
+        color = ''
         if self.user_guess == 'h' and self.previous_card < self.next_card:
             self.score += 100
+            color = green
         elif self.user_guess == 'l' and self.previous_card > self.next_card:
             self.score += 100
-        else:
+            color = green
+        elif (self.user_guess != 'l') and (self.user_guess != 'h'):
+            print('Please type one of the two words given in the square brackets (→[]←)')
+            
+        else:            
             self.score -= 75
-
-        print(f'Next card was: {self.next_card}')
-        print(f'Your score is: {self.score}')
+            color = red
+        
+        print(f'{color}Next card was: {self.next_card}')
+        print(f'Your score is: {self.score}{white}')
+        return keep_going == True
 
     def keep_playing(self):
         '''Asks the user if they want to keep playing, if not the game ends.
