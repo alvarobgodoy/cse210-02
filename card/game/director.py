@@ -80,8 +80,8 @@ class Director:
         elif self.user_guess == 'l' and self.previous_card > self.next_card:
             self.score += 100
             color = green
-        elif (self.user_guess != 'l') and (self.user_guess != 'h'):
-            print('Please type one of the two words given in the square brackets (→[]←)')
+        # elif (self.user_guess != 'l') and (self.user_guess != 'h'):
+        #     print('Please type one of the two words given in the square brackets (→[]←)')
             
         else:            
             self.score -= 75
