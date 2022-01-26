@@ -1,4 +1,4 @@
-# Hilo
+# HiLo
 Hilo is a game in which the player guesses if the next card drawn by the dealer will be higher or lower than the previous one. Points are won or lost based on whether or not the player guessed correctly.
 
 ## Rules
@@ -25,10 +25,14 @@ root                    (root folder)
 - README.md           (information about the project)
 ```
 
+## Required Technologies
+---
+* Python 3.8.0
+
 ## Authors
 ---
-- Alejo Bustos
-- Alvaro Godoy
-- Daniela Atampiz
-- Ismael Rojas
-- Nhicolas Acosta
+- Alejo Bustos (ale21020@byui.edu)
+- Alvaro Godoy (god21005@byui.edu)
+- Daniela Atampiz (ata21001@byui.edu)
+- Ismael Rojas (roj21010@byui.edu)
+- Nhicolas Acosta (aco21007@byui.edu)
