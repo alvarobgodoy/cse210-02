@@ -55,7 +55,7 @@ class Director:
         else:
             self.previous_card = self.next_card
         print(f'\nThe card is : {self.previous_card}')
-        self.user_guess = input('Higher or lower? [h/l] ')
+        self.user_guess = input('Higher or lower? [h/l] ').lower()
 
     def do_outputs(self):
         '''Calculates the result of the round and assigns the points.
@@ -66,10 +66,10 @@ class Director:
         card = Card()
         self.next_card = card.deal_card()
         color = ''
-        if self.user_guess == 'h'.upper() and self.previous_card < self.next_card:
+        if self.user_guess == 'h' and self.previous_card < self.next_card:
             self.score += 100
             color = green
-        elif self.user_guess == 'l'.upper() and self.previous_card > self.next_card:
+        elif self.user_guess == 'l' and self.previous_card > self.next_card:
             self.score += 100
             color = green
         else:            
@@ -89,5 +89,5 @@ class Director:
             print(f'{red}You lost the game. Sorry!{white}')
             self.is_playing = False
         else:
-            play_again = input('Play again? [y/n] ')
-            self.is_playing = (play_again == 'y'.upper() and self.score > 0)
+            play_again = input('Play again? [y/n] ').lower()
+            self.is_playing = (play_again == 'y' and self.score > 0)
