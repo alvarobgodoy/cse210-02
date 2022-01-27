@@ -66,10 +66,10 @@ class Director:
         card = Card()
         self.next_card = card.deal_card()
         color = ''
-        if self.user_guess == 'h' and self.previous_card < self.next_card:
+        if self.user_guess == 'h'.upper() and self.previous_card < self.next_card:
             self.score += 100
             color = green
-        elif self.user_guess == 'l' and self.previous_card > self.next_card:
+        elif self.user_guess == 'l'.upper() and self.previous_card > self.next_card:
             self.score += 100
             color = green
         else:            
@@ -90,4 +90,4 @@ class Director:
             self.is_playing = False
         else:
             play_again = input('Play again? [y/n] ')
-            self.is_playing = (play_again == "y" and self.score > 0)
+            self.is_playing = (play_again == 'y'.upper() and self.score > 0)
